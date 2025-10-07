@@ -16,7 +16,7 @@
     }
 }
 
- 
+
 
 body {
     font-family: 'Roboto', sans-serif;
@@ -151,6 +151,7 @@ form {
 
 
 .contact-form button {
+    font-family: 'Roboto', sans-serif;
     background: #ffffff;
     border: 1px solid #6ABD45;
     width: 100%;
@@ -414,7 +415,9 @@ form {
     left: 0;
     width: 100%;
     height: 92%;
-    background: radial-gradient(38.96% 38.96% at 61.04% 61.91%, #19191A 0%, #2D2D2E 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+    background: radial-gradient(38.96% 38.96% at 61.04% 61.91%, #19191A 0%, #2D2D2E 100%)
+        /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
+    ;
     z-index: 1;
     clip-path: polygon(100% 50%, 0 100%, 100% 100%);
 }
@@ -490,11 +493,23 @@ form {
 .tyre-title {
     font-family: 'Oswald';
     font-size: 36px;
-    /* text-4xl */
     font-weight: 500;
     margin-bottom: 1.5rem;
     line-height: 1.2;
 }
+
+.tyre-title::after {
+    content: "";
+    position: relative;
+    display: block;
+    width: 37%;
+    height: 2px;
+    background-color: #6ABD45;
+    border-radius: 9999px;
+    left: 150px;
+    bottom: 5px;
+}
+
 
 .tyre-description {
     font-size: 1rem;
@@ -569,10 +584,6 @@ form {
         /* More padding on larger screens */
     }
 
-    .tyre-title {
-        font-size: 2.75rem;
-        /* Larger title */
-    }
 
     .tyre-features {
         justify-content: flex-start;
@@ -586,12 +597,13 @@ form {
         background-position: 16% 0%;
     }
 }
-    
+
 
 @media (max-width: 1024px) {
     .tyre-advantage-section {
         padding: 5rem 0;
     }
+
     .content-container {
         flex-direction: column;
 
@@ -610,6 +622,10 @@ form {
         width: 60%;
         height: clamp(16px, 10vw, 54px);
         transform: translateX(0) skewX(-10deg) rotate(-10deg);
+    }
+
+    .tyre-title::after {
+        width: 20%;
     }
 }
 
@@ -632,7 +648,7 @@ form {
     .tyre-image {
         flex: 1;
         min-height: 350px;
-        
+
         width: 100%;
         order: 1;
         transform: scale(1.2);
@@ -688,12 +704,18 @@ form {
 }
 
 
+@media (max-width:425px){
+    .feature-item p{
+        font-size: 14px;
+    }
+}
+
 
 /* choose us section */
 
 .choose-us-section {
     position: relative;
-    padding: 4rem 0;
+    padding: 8rem 0;
     /* py-16 */
     overflow: hidden;
     background-color: #fff;
@@ -784,6 +806,7 @@ form {
 
 .feature-card:hover {
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    cursor: pointer;
     /* hover:shadow-2xl */
 }
 
@@ -842,8 +865,8 @@ form {
     background-color: #F8F9FA;
     top: 0;
     right: -250px;
-    width: 100%;
-    height: 100%;
+    width: 553px;
+    height: 532px;
     background-color: transparent;
     border-bottom-left-radius: 50% 300px;
     border-top-left-radius: 50% 300px;
@@ -853,9 +876,9 @@ form {
 .graphic-shape {
     position: absolute;
     top: 0%;
-    right: -10rem;
-    width: 541px;
-    height: 532px;
+    right: 0rem;
+    width: 434px;
+    height: 574px;
 }
 
 /* ========================================================================= */
@@ -907,6 +930,8 @@ form {
     /* lg breakpoint */
     .choose-us-section {
         padding: 6rem 0;
+        margin-top: 8rem;
+        margin-bottom: 4rem;
     }
 
     /* lg:py-24 */
@@ -945,7 +970,7 @@ form {
 }
 
 .container {
-    max-width: 1280px;
+    max-width: 1160px;
     margin: 0 auto;
     padding: 0 1rem;
 }
@@ -968,14 +993,17 @@ form {
     margin: 0;
     line-height: 1.2;
     border-bottom: 2px solid #4CAF50;
+    width: 85%;
     padding-bottom: 1rem;
 }
 
 
 .service-header-right p {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
     font-size: 1rem;
-    color: #A1A1AA;
-    /* Gray text for description */
+    line-height: 150%;
+    color: #BCC3C7;
     margin: 0;
 }
 
@@ -987,6 +1015,7 @@ form {
 }
 
 .service-item {
+    width: 100%;
     background-color: #232323;
     border-radius: 24px;
     overflow: hidden;
@@ -1136,8 +1165,12 @@ form {
         flex: 1;
         max-width: 45%;
     }
+}@media (max-width: 1024px){
+    .service-header-left h1{
+        width:100%;
+        font-size: 30px;
+    }
 }
-
 @media (min-width: 1024px) {
 
     /* lg breakpoint */
@@ -1201,7 +1234,7 @@ form {
 
 .testi-section-wrapper {
     font-family: 'Inter', sans-serif;
-    padding: 40px 20px;
+    padding: 60px 20px;
     background-color: #f7f7f7;
     text-align: center;
 }
@@ -1576,6 +1609,11 @@ form {
 
 /* Extra Small Screens (Mobile: Up to 480px) - Text adjustments */
 @media (max-width: 480px) {
+
+    .testi-section-wrapper{
+       margin-bottom: 40px;
+    }
+
     .testi-header h2 {
         font-size: 1.5rem;
     }
@@ -1670,6 +1708,7 @@ form {
     width: 100%;
     height: 280px;
     /* Base height for desktop */
+    overflow: hidden;
     background-color: #333333;
     /* Placeholder gray */
     background-size: cover;
@@ -1681,6 +1720,9 @@ form {
     border-radius: 16px;
     height: 100%;
     width: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
 }
 
 /* Positioning and styling the details container (UPDATED) */
@@ -1725,8 +1767,6 @@ form {
     height: 0;
     overflow: hidden;
     pointer-events: none;
-    /* Disable clicks when hidden */
-    /* margin-top: 0; */
     transition: opacity 0.3s ease, height 0.3s ease, margin-top 0.3s ease;
 }
 
@@ -1736,6 +1776,7 @@ form {
     height: 30px;
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 4px;
+    border: 1px solid #FFFFFF;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1856,7 +1897,7 @@ form {
     /* White background */
     font-family: 'Inter', sans-serif;
     color: #1a1a1a;
-    padding: 80px 40px;
+    padding: 120px 40px;
     text-align: center;
 }
 
@@ -1968,7 +2009,7 @@ form {
 
 
 /* Large Desktop (Max 1440px) - Minor adjustments to padding/spacing */
-@media (max-width: 1440px) {
+@media (max-width: 1240px) {
     .stats-section {
         padding: 60px 30px;
     }
@@ -2137,6 +2178,22 @@ form {
     background-size: cover;
     background-position: center;
     transition: opacity 0.3s;
+    z-index: 0;
+}
+
+.location-map-placeholder::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    /* Vignette overlay: lighter in center, darker on edges */
+    background: radial-gradient(ellipse at center,
+            rgba(0, 0, 0, 0.10) 0%,
+            rgba(0, 0, 0, 0.18) 35%,
+            rgba(0, 0, 0, 0.35) 60%,
+            rgba(0, 0, 0, 0.55) 80%,
+            rgba(0, 0, 0, 0.70) 100%);
+    pointer-events: none;
+    z-index: 1;
 }
 
 .location-map-placeholder:hover {
@@ -2232,7 +2289,6 @@ form {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    padding-bottom: 30px;
     /* Space above the payment row */
 }
 
@@ -2330,12 +2386,12 @@ form {
 
 .footer-contact-details {
     font-size: 16px;
-    color:#CCCCCC;
+    color: #CCCCCC;
 }
 
 .footer-hours-text {
     font-size: 16px;
-    color:#666666;
+    color: #666666;
 }
 
 /* --- Logo Placeholder --- */
@@ -2431,12 +2487,12 @@ form {
         padding: 0 30px;
     }
 
-    .footer-payment-row{
+    .footer-payment-row {
         padding-bottom: 50px;
     }
 
     .footer-copyright-bar {
-        padding: 15px 30px;
+        padding: 25px 30px;
     }
 }
 
@@ -2513,7 +2569,7 @@ form {
 
     .footer-social-links a:first-child {
         margin-left: 0;
-        
+
     }
 }
 
@@ -2531,6 +2587,9 @@ form {
         padding: 15px 20px 20px;
     }
 
+    .footer-hours-text{
+        font-size: 14px;
+    }
     .footer-column {
         margin-bottom: 25px;
     }
