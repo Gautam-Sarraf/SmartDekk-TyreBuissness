@@ -6,6 +6,16 @@
     scroll-behavior: smooth;
 }
 
+/* Prevent hero background from scaling larger than design width on ultra-wide screens */
+@media (min-width: 1441px) {
+    .hero {
+        /* Lock the image width to the design max while allowing the section to stretch */
+        background-size: 1440px auto;
+        background-position: left center;
+        background-repeat: no-repeat;
+    }
+}
+
  
 
 body {
